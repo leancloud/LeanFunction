@@ -12,6 +12,6 @@ fs.readdirSync(path.join(__dirname, 'functions')).forEach( file => {
 /**
  * A simple cloud function.
  */
-AV.Cloud.define('hello', function(request) {
-  return 'Hello world!'
-})
+AV.Cloud.define('hello', async (request) => 'Hello world!')
+
+AV.Cloud.define('echo-session-token', async (request) => request.sessionToken)
